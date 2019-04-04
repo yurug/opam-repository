@@ -1,0 +1,33 @@
+opam-version: "2.0"
+
+synopsis: "Interacting with cron from OCaml"
+description: """
+With this library, an ocaml program can interact with cron:
+parse/print crontab and update installed crontabs.
+"""
+
+maintainer: "Yann Régis-Gianas <yrg@irif.fr>"
+authors: [
+  "Yann Régis-Gianas <yann.regis-gianas@irif.fr>"
+]
+license: "MIT"
+
+homepage: "https://github.com/yurug/ocaml-crontab"
+bug-reports: "https://github.com/yurug/ocaml-crontab/issues"
+dev-repo: "git://github.com/yurug/ocaml-crontab.git"
+
+depends: [
+  "dune"                 {build & >= "1.4.0"}
+  "ocaml"
+  "odoc"                 {with-doc}
+]
+
+build: ["dune" "build" "-p" name "-j" jobs]
+run-test: [make "check"]
+url {
+  src: "https://github.com/yurug/ocaml-crontab/archive/0.1.tar.gz"
+  checksum: [
+    "md5=096acf8061a75e0b899d62090ab0416c"
+    "sha512=b05e85a0680631608bff651d90b0358f86f64822142b79d7f79f93c7a997abe7376a3deea21d571f8366080996559070af72611e92869a72f6f3fa300a880756"
+  ]
+}
